@@ -29,6 +29,13 @@ class Conta:
             return False
         else:
             self.saldo += valor
+            if self.limite < 100:
+                if valor + self.limite > 100:
+                    self.limite = 100
+
+                else:
+                    self.limite += valor
+
             self.extrato.append(valor)
             return True
 
